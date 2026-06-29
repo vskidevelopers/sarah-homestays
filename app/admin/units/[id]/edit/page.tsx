@@ -219,7 +219,7 @@ export default function EditUnitPage() {
                                         <button
                                             type="button"
                                             onClick={() => removeImage(index)}
-                                            className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm text-white hover:bg-red-500 transition-all opacity-0 group-hover:opacity-100"
+                                            className="absolute top-2 right-2 p-1.5 rounded-full bg-black/40 backdrop-blur-sm t text-white hover:bg-red-500 transition-all md:opacity-0 group-hover:opacity-100"
                                         >
                                             <Trash2 className="w-3 h-3" />
                                         </button>
