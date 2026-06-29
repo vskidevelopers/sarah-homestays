@@ -183,7 +183,7 @@ export default function CreateQuotePage() {
                                     <Button
                                         onClick={handleSaveAndDownload}
                                         disabled={saving || !clientName || !selectedUnitId || !checkIn || !checkOut}
-                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-lg"
+                                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 text-sm md:text-lg"
                                     >
                                         {saving ? (
                                             <><Loader2 className="w-5 h-5 animate-spin mr-2" /> Saving...</>
