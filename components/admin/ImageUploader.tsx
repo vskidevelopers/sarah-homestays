@@ -1,7 +1,7 @@
 // components/admin/ImageUploader.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Loader2, Upload, X } from 'lucide-react';
 import Image from 'next/image';
@@ -14,6 +14,12 @@ interface ImageUploaderProps {
 
 export default function ImageUploader({ images, setImages, label = "Upload Images" }: ImageUploaderProps) {
     const [uploading, setUploading] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
+
+    // Explicitly trigger the hidden file input
+    const handleButtonClick = () => {
+        fileInputRef.current?.click();
+    };
 
     const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
@@ -43,6 +49,11 @@ export default function ImageUploader({ images, setImages, label = "Upload Image
 
         setImages(newImages);
         setUploading(false);
+
+        // Reset the input so the same file can be uploaded again if removed
+        if (fileInputRef.current) {
+            fileInputRef.current.value = '';
+        }
     };
 
     const removeImage = (index: number) => {
@@ -53,25 +64,29 @@ export default function ImageUploader({ images, setImages, label = "Upload Image
         <div className="space-y-4">
             <div className="flex items-center justify-between">
                 <span className="text-sm font-medium text-foreground">{label}</span>
-                <label className="cursor-pointer">
-                    <Button
-                        type="button"
-                        variant="outline"
-                        size="sm"
-                        disabled={uploading}
-                        className="text-xs"
-                    >
-                        {uploading ? <Loader2 className="w-3 h-3 animate-spin mr-2" /> : <Upload className="w-3 h-3 mr-2" />}
-                        Add Photos
-                    </Button>
-                    <input
-                        type="file"
-                        multiple
-                        accept="image/*"
-                        onChange={handleUpload}
-                        className="hidden"
-                    />
-                </label>
+
+                {/* Removed the <label> wrapper. We use onClick instead. */}
+                <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    disabled={uploading}
+                    className="text-xs"
+                    onClick={handleButtonClick}
+                >
+                    {uploading ? <Loader2 className="w-3 h-3 animate-spin mr-2" /> : <Upload className="w-3 h-3 mr-2" />}
+                    Add Photos
+                </Button>
+
+
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept="image/*"
+                    onChange={handleUpload}
+                    className="hidden"
+                />
             </div>
 
             {images.length > 0 && (

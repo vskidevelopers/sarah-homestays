@@ -18,7 +18,7 @@ export default function FloatingWhatsApp() {
                 className="relative bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full w-14 h-14 md:w-16 md:h-16 p-0 shadow-xl shadow-black/20 flex items-center justify-center"
             >
                 <a
-                    href="https://wa.me/254701946104?text=Hi%20Sarah,%20I'm%20interested%20in%20booking%20a%20stay."
+                    href="https://wa.me/254722323471?text=Hi%20Sarah,%20I'm%20interested%20in%20booking%20a%20stay."
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Chat on WhatsApp"

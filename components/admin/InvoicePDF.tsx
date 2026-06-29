@@ -119,7 +119,7 @@ export const InvoicePDF = ({ data }: { data: InvoiceData }) => (
                 <View style={styles.mpesaBox}>
                     <Text style={{ fontSize: 9, color: '#6B6560', marginBottom: 4 }}>PAYMENT DETAILS</Text>
                     <Text style={styles.mpesaText}>M-Pesa Paybill / Send Money</Text>
-                    <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1E2560', marginTop: 4 }}>+254 701 946104</Text>
+                    <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#1E2560', marginTop: 4 }}>+254 722 323 471</Text>
                     <Text style={{ fontSize: 9, color: '#6B6560', marginTop: 4 }}>Name: Sarah Homestays</Text>
                 </View>
             </View>
@@ -127,7 +127,7 @@ export const InvoicePDF = ({ data }: { data: InvoiceData }) => (
             {/* Footer */}
             <View style={styles.footer}>
                 <Text>Thank you for choosing Sarah Homestay. We look forward to hosting you.</Text>
-                <Text style={{ marginTop: 4 }}>For inquiries, contact us via WhatsApp: +254 701 946104</Text>
+                <Text style={{ marginTop: 4 }}>For inquiries, contact us via WhatsApp: +254 722 323 471</Text>
             </View>
         </Page>
     </Document>

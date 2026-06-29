@@ -6,9 +6,12 @@
 
 @layer base {
   :root {
-    /* Brand Anchors */
-    --navy-600: 30 37 96; /* #1E2560 */
-    --gold-500: 196 160 53; /* #C4A035 */
+    --gold-500: #c4a035;
+    --gold-400: #d4b55a;
+    --navy-600: #1e2560;
+    --navy-800: #141840;
+    --ivory: #faf7f2;
+    --ink: #2a2420;
 
     /* shadcn Base Mapping */
     --background: 255 247 242; /* #FAF7F2 (Ivory) */
@@ -33,8 +36,7 @@
     --muted-foreground: 107 101 96; /* #6B6560 */
 
     /* Accent = Gold (CTAs, Highlights, Links) */
-    --accent: 196 160 53; /* #C4A035 */
-    --accent-foreground: 20 24 64; /* Dark navy for text on gold */
+    --accent: #c4a035 --accent-foreground: 20 24 64; /* Dark navy for text on gold */
 
     --destructive: 139 46 46; /* Deep brick red */
     --destructive-foreground: 250 247 242;
@@ -178,4 +180,14 @@
   --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.547 0.021 43.1);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

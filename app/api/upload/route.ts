@@ -12,6 +12,7 @@ cloudinary.config({
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
+    console.log("Received formData :", formData);
     const file = formData.get("file") as File;
 
     if (!file) {
@@ -25,7 +26,7 @@ export async function POST(request: Request) {
     // Upload to Cloudinary
     const result = await new Promise((resolve, reject) => {
       cloudinary.uploader
-        .upload_stream({ folder: "sarah-homestays" }, (error, result) => {
+        .upload_stream({ folder: "sarahomes/units" }, (error, result) => {
           if (error) reject(error);
           else resolve(result);
         })

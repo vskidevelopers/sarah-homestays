@@ -6,7 +6,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Loader2, Plus, Home } from 'lucide-react';
+import { Loader2, Plus, Home, Pencil } from 'lucide-react'; // Added Pencil
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -52,10 +52,26 @@ export default function UnitsPage() {
                     {units.map((unit) => (
                         <Card key={unit.id} className="overflow-hidden border-border/50 hover:border-accent/50 transition-colors group">
                             <div className="aspect-[4/3] relative bg-secondary">
-                                <Image src={unit.heroImage} alt={unit.name} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <Image
+                                    src={unit.heroImage}
+                                    alt={unit.name}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                />
+
+                                {/* Floating Edit Button */}
+                                <Link
+                                    href={`/admin/units/${unit.id}/edit`}
+                                    className="absolute top-3 right-3 z-20 p-2.5 bg-background/80 backdrop-blur-sm text-foreground rounded-full opacity-80 md:opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-accent hover:text-accent-foreground shadow-lg"
+                                    aria-label="Edit unit"
+                                >
+                                    <Pencil className="w-4 h-4" />
+                                </Link>
+
+                                {/* Inactive Overlay */}
                                 {!unit.isActive && (
-                                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                        <span className="text-white font-medium">Inactive</span>
+                                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center z-10">
+                                        <span className="text-white font-medium tracking-wide">Inactive</span>
                                     </div>
                                 )}
                             </div>
@@ -66,7 +82,10 @@ export default function UnitsPage() {
                                         <p className="text-xs text-muted-foreground">{unit.location} &middot; {unit.type}</p>
                                     </div>
                                 </div>
-                                <p className="font-display text-lg text-accent">KES {unit.nightlyRate.toLocaleString()}<span className="text-xs text-muted-foreground font-sans">/night</span></p>
+                                <p className="font-display text-lg text-(--gold-500)">
+                                    KES {unit.nightlyRate.toLocaleString()}
+                                    <span className="text-xs text-muted-foreground font-sans">/night</span>
+                                </p>
                             </CardContent>
                         </Card>
                     ))}

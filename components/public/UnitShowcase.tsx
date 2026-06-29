@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Unit } from '@/types';
 import { Button } from '@/components/ui/button';
-import { MapPin, Users, Wifi } from 'lucide-react';
+import { MapPin, Zap, Wifi } from 'lucide-react';
 
 interface UnitShowcaseProps {
     unit: Unit;
@@ -53,8 +53,8 @@ export default function UnitShowcase({ unit, index }: UnitShowcaseProps) {
                 {/* Minimal Amenities Strip */}
                 <div className="flex items-center gap-6 mb-10 text-[var(--foreground)]">
                     <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-[var(--gold-500)]" />
-                        <span className="text-sm">Sleeps {unit.amenities.includes('2') ? '2' : '4'}</span>
+                        <Zap className="w-4 h-4 text-[var(--gold-500)]" />
+                        <span className="text-sm">Smart Living</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <Wifi className="w-4 h-4 text-[var(--gold-500)]" />

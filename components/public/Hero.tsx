@@ -37,17 +37,17 @@ export default function Hero() {
                 style={{ scale }}
                 className="absolute inset-0 z-0"
             >
-                {/* Replace this with your actual Cloudinary hero image URL or local image */}
+
                 <Image
-                    src="/hero-kilimani.jpg"
+                    src="https://res.cloudinary.com/dlmmsamck/image/upload/v1782660228/b5d831f8-2408-425c-82c5-81fe2d836706_l8nca0.png"
                     alt="Sarah Homestay Kilimani - Luxury apartment at golden hour"
                     fill
                     priority
                     className="object-cover"
                 />
-                {/* Cinematic Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[rgba(20,24,64,0.85)] via-[rgba(20,24,64,0.4)] to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent h-1/3 bottom-0 top-auto" />
+                {/* Cinematic linear Overlays */}
+                <div className="absolute inset-0 bg-linear-to-r from-[rgba(20,24,64,0.85)] via-[rgba(20,24,64,0.4)] to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-[var(--background)] via-transparent to-transparent h-1/3 bottom-0 top-auto" />
             </motion.div>
 
             {/* Content Overlay */}
@@ -55,18 +55,7 @@ export default function Hero() {
                 style={{ opacity, y }}
                 className="relative z-10 h-full flex flex-col justify-between px-6 md:px-12 lg:px-24 py-8"
             >
-                {/* Top Bar - Logo Area */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex items-center"
-                >
-                    {/* Replace with your actual Logo component or Image */}
-                    <div className="text-[var(--background)] font-display text-2xl tracking-wide">
-                        SARAH <span className="text-[var(--gold-500)]">HOMESTAY</span>
-                    </div>
-                </motion.div>
+
 
                 {/* Center Content */}
                 <div className="flex-1 flex items-center max-w-3xl">
@@ -75,7 +64,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                     >
-                        <p className="text-[var(--gold-500)] text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-medium">
+                        <p className="text-(--gold-500) text-sm md:text-base tracking-[0.3em] uppercase mb-4 font-medium">
                             {greeting[currentTime]}
                         </p>
                         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-[var(--background)] font-medium leading-[0.95] mb-6">
@@ -107,7 +96,7 @@ export default function Hero() {
                         className="bg-[var(--gold-500)] text-[var(--navy-800)] hover:bg-[var(--gold-400)] hover:text-[var(--navy-800)] text-base md:text-lg px-8 py-6 rounded-sm font-medium transition-all duration-300 shadow-lg shadow-black/20"
                     >
                         <a
-                            href="https://wa.me/254701946104?text=Hi%20Sarah,%20I'm%20interested%20in%20booking%20a%20stay."
+                            href="https://wa.me/254722323471?text=Hi%20Sarah,%20I'm%20interested%20in%20booking%20a%20stay."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-3"

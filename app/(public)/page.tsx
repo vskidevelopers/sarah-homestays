@@ -1,4 +1,5 @@
 // app/(public)/page.tsx
+import ContactSection from '@/components/public/ContactSection';
 import Hero from '@/components/public/Hero';
 import LocationHeader from '@/components/public/LocationHeader';
 import UnitCollection from '@/components/public/UnitCollection';
@@ -25,26 +26,14 @@ export default async function HomePage() {
     return (
         <main className="min-h-screen bg-[var(--background)]">
             <Hero />
-            <UnitCollection />
+            <div id="kilimani">
 
-            {/* The Collection */}
-            <section className="py-12">
-                {locationOrder.map((location) => {
-                    const locationUnits = unitsByLocation[location];
-                    if (!locationUnits || locationUnits.length === 0) return null;
+                <UnitCollection />
+            </div>
 
-                    return (
-                        <div key={location}>
-                            <LocationHeader location={location} />
-                            <div className="flex flex-col">
-                                {locationUnits.map((unit, index) => (
-                                    <UnitShowcase key={unit.id} unit={unit} index={index} />
-                                ))}
-                            </div>
-                        </div>
-                    );
-                })}
-            </section>
+            <ContactSection />
+
+
         </main>
     );
 }
