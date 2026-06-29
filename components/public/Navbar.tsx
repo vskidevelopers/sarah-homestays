@@ -4,7 +4,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -34,7 +33,7 @@ export default function Navbar() {
         <>
             <nav
                 className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-in-out ${isScrolled
-                    ? 'bg-(--ivory)/90 backdrop-blur-md shadow-sm py-4'
+                    ? 'bg-background/90 backdrop-blur-md shadow-sm py-4' // Fixed: bg-background/90
                     : 'bg-transparent py-6'
                     }`}
             >
@@ -54,7 +53,7 @@ export default function Navbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-(--gold-500) ${isScrolled ? 'text-foreground' : 'text-(--ivory)'
+                                className={`text-sm font-medium tracking-wide transition-colors duration-300 hover:text-accent ${isScrolled ? 'text-foreground' : 'text-background' // Fixed: text-background
                                     }`}
                             >
                                 {link.name}
@@ -65,8 +64,8 @@ export default function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`px-5 py-2 text-sm font-medium rounded-sm transition-all duration-300 ${isScrolled
-                                ? 'bg-foreground text-(--ivory) hover:bg-accent hover:text-foreground'
-                                : 'bg-accent text-foreground hover:bg-(--ivory)'
+                                ? 'bg-foreground text-background hover:bg-accent hover:text-foreground'
+                                : 'bg-accent text-foreground hover:bg-background'
                                 }`}
                         >
                             Book Now
@@ -76,7 +75,7 @@ export default function Navbar() {
                     {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMobileOpen(!isMobileOpen)}
-                        className={`md:hidden relative z-50 p-2 transition-colors ${isScrolled || isMobileOpen ? 'text-foreground' : 'text-(ivory)'
+                        className={`md:hidden relative z-50 p-2 transition-colors ${isScrolled || isMobileOpen ? 'text-foreground' : 'text-background' // Fixed: text-background
                             }`}
                     >
                         {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -92,7 +91,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed inset-0 z-30 bg-(ivory) flex flex-col items-center justify-center gap-8"
+                        className="fixed inset-0 z-30 bg-background flex flex-col items-center justify-center gap-8"
                     >
                         {navLinks.map((link, i) => (
                             <motion.a

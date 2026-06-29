@@ -50,7 +50,7 @@ export default function UnitDetailPage() {
     return (
         <main className="bg-background text-foreground">
             {/* Navigation Header (Glassmorphism) */}
-            <div className="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 flex justify-between items-center bg-gradient-to-b from-black/60 to-transparent">
+            <div className="fixed top-0 left-0 right-0 z-20 p-4 md:p-6 flex justify-between items-center bg-gradient-to-b from-black/60 to-transparent">
                 <Link href="/" className="p-2 rounded-full bg-black/20 backdrop-blur-md text-white hover:bg-black/40 transition-colors">
                     <ArrowLeft className="w-5 h-5" />
                 </Link>
